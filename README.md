@@ -73,8 +73,8 @@ Clipper.io gives you the same core pipeline without the leash:
 You need Docker, an [AssemblyAI](https://www.assemblyai.com/) API key for transcription, and one LLM provider key (Google, OpenAI, Anthropic, or a local Ollama).
 
 ```bash
-git clone https://github.com/FujiwaraChoki/supoclip.git
-cd supoclip
+git clone https://github.com/AVENGERSTHE2102/Clipper.git
+cd Clipper
 ```
 
 Create a `.env` in the root with your keys:
