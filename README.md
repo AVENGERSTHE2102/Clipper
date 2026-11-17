@@ -1,9 +1,3 @@
-<p align="center">
-  <a href="https://www.supoclip.com">
-    <img src="assets/banner.jpg" alt="Clipper.io dashboard with video input, caption controls, and recent clips" width="100%" />
-  </a>
-</p>
-
 <h3 align="center">Fuck OpusClip.</h3>
 
 <p align="center">
@@ -12,33 +6,18 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0-blue.svg" alt="License: AGPL-3.0" /></a>
-  <a href="https://www.supoclip.com"><img src="https://img.shields.io/badge/hosted-supoclip.com-black.svg" alt="Hosted at supoclip.com" /></a>
   <a href="docs/README.md"><img src="https://img.shields.io/badge/docs-docs%2F-green.svg" alt="Documentation" /></a>
-</p>
-
-<p align="center">
-  <a href="https://apps.apple.com/us/app/supoclip/id6784760040">
-    <img src="frontend/public/app-store-badge.svg" alt="Download Clipper.io on the App Store" height="40" />
-  </a>
-  &nbsp;
-  <a href="https://www.producthunt.com/products/supoclip?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-supoclip" target="_blank" rel="noopener noreferrer">
-    <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1276786&theme=dark" alt="Clipper.io on Product Hunt" height="40" />
-  </a>
 </p>
 
 ---
 
-Clipper.io is an open-source, AI-powered video clipping tool. Give it a long video — a podcast, a talk, a stream VOD — and it finds the most viral-worthy moments, scores them, and renders them as vertical 9:16 clips with face-centered cropping, word-synced subtitles, hook titles, and optional B-roll. Run it yourself, customize it, inspect it — or use the hosted version and skip the setup.
-
-**See it first:** [watch real clips Clipper.io generated](https://www.supoclip.com/demo) from a long-form interview, or follow the [self-hosting tutorial](https://www.supoclip.com/blog/self-host-supoclip-docker) to run it on your own machine.
+Clipper.io is an open-source, AI-powered video clipping tool. Give it a long video — a podcast, a talk, a stream VOD — and it finds the most viral-worthy moments, scores them, and renders them as vertical 9:16 clips with face-centered cropping, word-synced subtitles, hook titles, and optional B-roll. Run it yourself, customize it, and inspect it.
 
 ## Ways to Use Clipper.io
 
 | Option | Details |
 |---|---|
-| **Hosted web app** | [www.supoclip.com](https://www.supoclip.com) — no infrastructure to run |
-| **iOS app** | [Clipper.io on the App Store](https://apps.apple.com/us/app/supoclip/id6784760040) — the same hosted pipeline, from your iPhone |
-| **Self-host** | Docker Compose setup below, or the step-by-step [self-hosting tutorial](https://www.supoclip.com/blog/self-host-supoclip-docker) — AGPL-3.0, unlimited usage on your own hardware |
+| **Self-host** | Docker Compose setup below — AGPL-3.0, unlimited usage on your own hardware |
 | **MCP server** | [`mcp/`](mcp/) — use Clipper.io from Claude, Cursor, and other MCP clients |
 | **REST API** | API keys from `/settings/api-keys` authenticate the backend directly — see the [API reference](docs/api-reference.md) |
 
@@ -51,7 +30,6 @@ Clipper.io gives you the same core pipeline without the leash:
 - **Self-hostable** — run it on your own hardware, process as much as it can handle
 - **No watermarks** — your content stays yours
 - **Open source** — AGPL-3.0, full transparency, fork and extend it however you like
-- **Hosted option** — when you'd rather not manage servers, the cloud version is there
 
 ## Features
 
@@ -95,7 +73,7 @@ First startup takes a few minutes; watch it with `docker-compose logs -f`. Once 
 
 The template sets `FRONTEND_PORT=3107`. Existing deployments without this setting keep port `3001`; preserve that port if your production reverse proxy uses it. See the [setup guide](docs/setup.md) for custom ports and public URLs.
 
-To run fully local with Whisper and Ollama (including the Docker networking Ollama needs), see the [self-hosting tutorial](https://www.supoclip.com/blog/self-host-supoclip-docker#local). To use a different LLM provider or configure the optional pieces (B-roll, analytics, emails, YouTube metadata), see the [configuration guide](docs/configuration.md). If something misbehaves, the [troubleshooting guide](docs/troubleshooting.md) covers the common failure modes.
+To run fully local with Whisper and Ollama (including the Docker networking Ollama needs), see the [setup guide](docs/setup.md). To use a different LLM provider or configure optional features (B-roll, analytics, emails, YouTube metadata), see the [configuration guide](docs/configuration.md). If something misbehaves, the [troubleshooting guide](docs/troubleshooting.md) covers the common failure modes.
 
 ## Documentation
 
@@ -105,7 +83,7 @@ Everything beyond this page lives in [`docs/`](docs/README.md):
 |---|---|
 | [Setup](docs/setup.md) | Docker-first install, local development, first-run checklist |
 | [Configuration](docs/configuration.md) | Every environment variable, operating modes, provider options |
-| [App Guide](docs/app-guide.md) | Screens, workflows, admin features, hosted vs self-host |
+| [App Guide](docs/app-guide.md) | Screens, workflows, and admin features |
 | [Architecture](docs/architecture.md) | How the frontend, API, worker, queue, and pipeline fit together |
 | [API Reference](docs/api-reference.md) | Backend endpoints, API keys, admin and billing routes |
 | [Development](docs/development.md) | Running locally without Docker, testing, contributing workflow |
