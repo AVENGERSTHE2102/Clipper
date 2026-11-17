@@ -1,0 +1,22 @@
+"use client";
+
+import dynamic from "next/dynamic";
+
+import LandingPage from "@/components/landing-page";
+import { useSession } from "@/lib/auth-client";
+import { isLandingOnlyModeEnabled } from "@/lib/app-flags";
+
+const HomeApp = dynamic(() => import("@/components/home-app"), {
+  ssr: false,
+});
+
+export function HomeRouter() {
+  const { data: session, isPending } = useSession();
+  const localAppAccess = process.env.NEXT_PUBLIC_LOCAL_APP_ACCESS === "true";
+
+  if (!isLandingOnlyModeEnabled && (localAppAccess || (!isPending && session?.user))) {
+    return <HomeApp />;
+  }
+
+  return <LandingPage />;
+}
